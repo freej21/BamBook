@@ -1,0 +1,281 @@
+{% extends "book/base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col">
+            <div class="card bg-light mb-3 " style="max-width: 25rem; height: 500px;">
+                <div class="card-header"><h4 class="text-center"> Visitors Feedbacks</h4></div>
+                <div class="card-body" style=" overflow-y: scroll; max-height: 500px;">
+                    {% for feedbacks in feedbacks  %}
+                        <div class="col">
+                            <p>Visitor: {{ feedbacks.visitor.name|first_letter_and_hash }}</p>
+                            <p>Department: {{ feedbacks.visitor.department }}</p>
+                        <hr style="border: 1px solid black;">
+    
+                            <!--foritem 1-->
+                            {% if feedbacks.item_1 == 1 %}
+    
+                                <p>SQDO - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_1 == 2 %}
+    
+                                <p>SQDO - Disagree</p>
+                            {% elif feedbacks.item_1 == 3 %}
+    
+                                <p>SQDO - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_1 == 4 %}
+    
+                                <p>SQDO - Agree</p>
+    
+                            {% elif feedbacks.item_1 == 5 %}
+    
+                                <p>SQDO - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_1 == 0 %}
+    
+                                <p>SQDO - NA</p>
+    
+                            {% endif %}
+                            <!--endif for item1-->
+    
+                            <!--For item2-->
+                            {% if feedbacks.item_2 == 1 %}
+    
+                                <p>SQD1 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_2 == 2 %}
+    
+                                <p>SQD1 - Disagree</p>
+                            {% elif feedbacks.item_2 == 3 %}
+    
+                                <p>SQD1 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_2 == 4 %}
+    
+                                <p>SQD1 - Agree</p>
+    
+                            {% elif feedbacks.item_2 == 5 %}
+    
+                                <p>SQD1 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_2 == 0 %}
+    
+                                <p>SQD1 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item2-->
+                                
+                           <!--For item3-->
+                            {% if feedbacks.item_3 == 1 %}
+    
+                                <p>SQD2 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_3 == 2 %}
+    
+                                <p>SQD2 - Disagree</p>
+                            {% elif feedbacks.item_3 == 3 %}
+    
+                                <p>SQD2 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_3 == 4 %}
+    
+                                <p>SQD2 - Agree</p>
+    
+                            {% elif feedbacks.item_3 == 5 %}
+    
+                                <p>SQD2 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_3 == 0 %}
+    
+                                <p>SQD2 - NA</p>
+    
+                            {% endif %}
+                        
+                            <!--end if for item3-->
+    
+                            <!--For item4-->
+                            {% if feedbacks.item_4 == 1 %}
+    
+                                <p>SQD3 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_4 == 2 %}
+    
+                                <p>SQD3 - Disagree</p>
+                            {% elif feedbacks.item_4 == 3 %}
+    
+                                <p>SQD3 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_4 == 4 %}
+    
+                                <p>SQD3 - Agree</p>
+    
+                            {% elif feedbacks.item_4 == 5 %}
+    
+                                <p>SQD3 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_4 == 0 %}
+    
+                                <p>SQD3 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item4-->
+    
+                            <!--For item5-->
+                            {% if feedbacks.item_5 == 1 %}
+    
+                                <p>SQD4 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_5 == 2 %}
+    
+                                <p>SQD4 - Disagree</p>
+                            {% elif feedbacks.item_5 == 3 %}
+    
+                                <p>SQD4 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_5 == 4 %}
+    
+                                <p>SQD4 - Agree</p>
+    
+                            {% elif feedbacks.item_5 == 5 %}
+    
+                                <p>SQD4 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_5 == 0 %}
+    
+                                <p>SQD4 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item5-->
+    
+                            <!--For item6-->
+                            {% if feedbacks.item_6 == 1 %}
+    
+                                <p>SQD5 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_6 == 2 %}
+    
+                                <p>SQD5 - Disagree</p>
+                            {% elif feedbacks.item_6 == 3 %}
+    
+                                <p>SQD5 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_6 == 4 %}
+    
+                                <p>SQD5 - Agree</p>
+    
+                            {% elif feedbacks.item_6 == 5 %}
+    
+                                <p>SQD5 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_6 == 0 %}
+    
+                                <p>SQD5 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item6-->
+    
+                            <!--For item7-->
+                            {% if feedbacks.item_7 == 1 %}
+    
+                                <p>SQD6 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_7 == 2 %}
+    
+                                <p>SQD6 - Disagree</p>
+                            {% elif feedbacks.item_7 == 3 %}
+    
+                                <p>SQD6 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_7 == 4 %}
+    
+                                <p>SQD6 - Agree</p>
+    
+                            {% elif feedbacks.item_7 == 5 %}
+    
+                                <p>SQD6 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_7 == 0 %}
+    
+                                <p>SQD6 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item7-->
+    
+                            <!--For item8-->
+                            {% if feedbacks.item_8 == 1 %}
+    
+                                <p>SQD7 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_8 == 2 %}
+    
+                                <p>SQD7 - Disagree</p>
+                            {% elif feedbacks.item_8 == 3 %}
+    
+                                <p>SQD7 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_8 == 4 %}
+    
+                                <p>SQD7 - Agree</p>
+    
+                            {% elif feedbacks.item_8 == 5 %}
+    
+                                <p>SQD7 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_8 == 0 %}
+    
+                                <p>SQD7 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item8-->
+    
+                            <!--For item9-->
+                            {% if feedbacks.item_9 == 1 %}
+    
+                                <p>SQD8 - Strongly Disagree</p>
+    
+                            {% elif feedbacks.item_9 == 2 %}
+    
+                                <p>SQD8 - Disagree</p>
+                            {% elif feedbacks.item_9 == 3 %}
+    
+                                <p>SQD8 - Neither Agree or Disagree</p>
+    
+                            {% elif feedbacks.item_9 == 4 %}
+    
+                                <p>SQD8 - Agree</p>
+    
+                            {% elif feedbacks.item_9 == 5 %}
+    
+                                <p>SQD8 - Strongly Agree</p>
+                            
+                            {% elif feedbacks.item_9 == 0 %}
+    
+                                <p>SQD8 - NA</p>
+    
+                            {% endif %}
+                            <!--end if for item9-->
+                            <hr style="border: 1px solid black;">
+                                <p>comments:</p>
+                                <div class="col">
+                                    {{feedbacks.comment}}
+                                </div>
+                        
+                            <hr style="border: 1px solid black;">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+        <div class="col">
+            {% include 'book/feedback_average.html' %}
+        </div>
+            
+        </div>
+    </div>
+
+{% endblock content %}

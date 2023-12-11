@@ -1,0 +1,28 @@
+
+{% block content %}
+    
+    <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">LGU Bambang</div>
+        <div class="card-body">
+          <h4 class="card-title">Visitors ID</h4>
+
+          <!--Visitors Captured Photo-->
+          <img class="img-profile rounded-circle" 
+          src="data:image/jpeg;base64,{{ captured_photo_base64 }}" 
+          alt="Visitor's Photo"
+          width=50
+          height=50>
+          <!--Visitors Captured Photo-->
+            <h5 class="card-text">Name: {{receipt.name}}</h5>
+            <h5 class="card-text">Contact: {{receipt.contact}}</h5>
+            <h6 class="list-group-item">Address: {{receipt.address}}</h6>
+            <h6  class="list-group-item">Purpose: {{receipt.purpose}}</h6>
+            <h6 class="list-group-item">Department: {{receipt.department}}</h6>
+            
+            <img src="data:image/png;base64,{{ qr_code_image|safe }}" 
+            alt="QR Code"
+            width=100
+            height=100>
+        </div>
+      </div>
+{% endblock content %}

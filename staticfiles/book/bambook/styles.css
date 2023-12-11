@@ -1,0 +1,17 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+.sidebar-brand-text,
+.nav-link {
+  color: black;
+}
+
+span{
+  color: black;
+}
+
+
+

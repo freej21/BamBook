@@ -1,0 +1,102 @@
+{% extends 'book/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+    #logo{
+        border-radius: 50%;
+        width: 250px;
+        height: 130px;
+    }
+    
+    #card-content{
+        max-width: 20rem;
+    }
+    #print{
+        width: 5rem;
+    }
+    @media print{  
+        .sidebar{
+            display: none !important;
+        }
+        #print{
+            display: none;
+        }
+        
+        #card-content{
+            max-width: 77rem;
+            height: 90rem;
+
+            #logo{
+                width: 600px;
+                height: 320px;
+        }
+        }
+        #h4-header{
+            font-size: 80px;
+            
+        }
+        #h6-header{
+            font-size: 60px;
+        
+        }
+       
+        #visitor-info{
+            margin-left: 65px;
+            font-size: 50px;
+        }
+        }
+    
+</style>
+
+
+    <div class="container" style="max-width: 20rem;">
+        <div class="container" id="content">
+            <div class="row justify-content-center" >
+                <div class="card shadow p-3 mb-3" id="card-content">
+                        <div class="row text-center">
+                            <div class="col-md-12">
+                                <img class="img-profile rounded-circle" id="logo"
+                                    src="{% static 'book/bambook/img/bambang_logo.png' %}">
+                                <h4 id="h4-header">BAYAN NG BAMBANG</h4>
+                                <h6 id="h6-header">Bambang, Nueva Vizaya</h6>
+                                <h6 id="h6-header">Visitor Information</h6>
+                            </div>
+                        </div>
+                        <hr class="dash-line">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10">
+                                <div class="row" id="visitor-info">
+                                    <p><strong>ID:</strong> {{receipt.unique_id}}</p>
+                                    <p><strong>Name:</strong> {{receipt.name}}</p>
+                                    <p><strong>CP No:</strong> {{receipt.contact}}</p>
+                                    <p><strong>Department:</strong> {{receipt.department}}</p>
+                                    <p><strong>Purpose:</strong> {{receipt.purpose}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="dash-line">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="row justify-content-center mt-3">
+            <button class="btn btn-primary mx-auto" id="print">Print</button>
+        </div>
+    </div>
+
+
+<script>
+    const printBtn = document.getElementById('print');
+
+    printBtn.addEventListener('click', function(){
+        print();
+    })
+    
+</script>
+{% endblock content %}
+    
+    
+  

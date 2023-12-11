@@ -1,0 +1,34 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+.nav-link {
+  color: whitesmoke;
+}
+
+
+
+li a:hover{
+  color: aqua;
+  background-color: white;
+}
+a .nav-link:hover{
+  background-color: white;
+}
+
+span{
+  color: black;
+}
+
+#navigation-top{
+  background-color: maroon;
+}
+.dash-line{
+  border-top: 2px dashed black;
+}
+
+.container{
+  margin-top: 3%;
+}

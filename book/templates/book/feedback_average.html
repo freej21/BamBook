@@ -1,0 +1,182 @@
+
+    <div>
+        <!-- Display Average Ratings -->
+        <div class="card bg-light mb-3" style="max-width: fit-content;">
+            <div class="card-header"><h4 class="text-center">Average Ratings</h4></div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-sm table-bordered tally-table" id="dataTable" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Average</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>SQDO. I am satisfied with the service that I availed.</td>
+
+                            {% if avg_rating_item_1 == 0 %}
+                                <td> NA - {{avg_rating_item_1}} </td>
+                            {% elif avg_rating_item_1 == 1 or avg_rating_item_1 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_1 }} </td>
+                            {% elif avg_rating_item_1 == 2 or avg_rating_item_1 < 3  %}
+                                <td> Disagree - {{ avg_rating_item_1 }} </td>
+                            {% elif avg_rating_item_1 == 3 or avg_rating_item_1 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_1 }} </td>
+                            {% elif avg_rating_item_1 == 4 or avg_rating_item_1 < 5  %}
+                                <td> Agree - {{ avg_rating_item_1 }} </td>
+                            {% elif avg_rating_item_1 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_1 }} </td>
+
+                            {% endif %}
+                                  
+                            
+                        </tr>
+                        <tr>
+                            <td>SQD1. I spend a reasonable amount of time for my transaction.</td>
+
+                            {% if avg_rating_item_2 == 0 %}
+                                <td> NA - {{avg_rating_item_2}} </td>
+                            {% elif avg_rating_item_2 == 1 or avg_rating_item_2 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_2 }} </td>
+                            {% elif avg_rating_item_2 == 2 or avg_rating_item_2 < 3  %}
+                                <td> Disagree - {{ avg_rating_item_2 }} </td>
+                            {% elif avg_rating_item_2 == 3 or avg_rating_item_2 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_2 }} </td>
+                            {% elif avg_rating_item_2 == 4 or avg_rating_item_2 < 5  %}
+                                <td> Agree - {{ avg_rating_item_2 }} </td>
+                            {% elif avg_rating_item_2 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_2 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD2. The office followed the transaction's requirements and steps based on the information provided.</td>
+                            {% if avg_rating_item_3 == 0 %}
+                                <td> NA - {{avg_rating_item_3}} </td>
+                            {% elif avg_rating_item_3 == 1 or avg_rating_item_3 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_3 }} </td>
+                            {% elif avg_rating_item_3 == 2 or avg_rating_item_3 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_3 }} </td>
+                            {% elif avg_rating_item_3 == 3 or avg_rating_item_3 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_3 }} </td>
+                            {% elif avg_rating_item_3 == 4 or avg_rating_item_3 < 5  %}
+                                <td> Agree - {{ avg_rating_item_3 }} </td>
+                            {% elif avg_rating_item_3 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_3 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD3. The steps (including payment) I needed to do for my transaction were easy and simple.</td>
+                            {% if avg_rating_item_4 == 0 %}
+                                <td> NA - {{avg_rating_item_4}} </td>
+                            {% elif avg_rating_item_4 == 1 or avg_rating_item_4 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_4 }} </td>
+                            {% elif avg_rating_item_4 == 2 or avg_rating_item_4 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_4 }} </td>
+                            {% elif avg_rating_item_4 == 3 or avg_rating_item_4 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_3 }} </td>
+                            {% elif avg_rating_item_4 == 4 or avg_rating_item_4 < 5  %}
+                                <td> Agree - {{ avg_rating_item_4 }} </td>
+                            {% elif avg_rating_item_4 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_4 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD4. I easily found information about my transaction from the office or its website.</td>
+                            {% if avg_rating_item_5 == 0 %}
+                                <td> NA - {{avg_rating_item_5}} </td>
+                            {% elif avg_rating_item_5 == 1 or avg_rating_item_5 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_5 }} </td>
+                            {% elif avg_rating_item_5 == 2 or avg_rating_item_5 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_5 }} </td>
+                            {% elif avg_rating_item_5 == 3 or avg_rating_item_5 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_5 }} </td>
+                            {% elif avg_rating_item_5 == 4 or avg_rating_item_5 < 5  %}
+                                <td> Agree - {{ avg_rating_item_5 }} </td>
+                            {% elif avg_rating_item_5 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_5 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD5. I paid a reasonable amount of fees for my transaction.</td>
+                            {% if avg_rating_item_6 == 0 %}
+                                <td> NA - {{avg_rating_item_6}} </td>
+                            {% elif avg_rating_item_6 == 1 or avg_rating_item_6 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_6 }} </td>
+                            {% elif avg_rating_item_6 == 2 or avg_rating_item_6 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_6 }} </td>
+                            {% elif avg_rating_item_6 == 3 or avg_rating_item_6 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_6 }} </td>
+                            {% elif avg_rating_item_6 == 4 or avg_rating_item_6 < 5  %}
+                                <td> Agree - {{ avg_rating_item_6 }} </td>
+                            {% elif avg_rating_item_6 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_6 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD6. I feel the office was fair to everyone, or "walang palakasan", during my transaction.</td>
+                            {% if avg_rating_item_7 == 0 %}
+                                <td> NA - {{avg_rating_item_7}} </td>
+                            {% elif avg_rating_item_7 == 1 or avg_rating_item_7 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_7 }} </td>
+                            {% elif avg_rating_item_7 == 2 or avg_rating_item_7 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_7 }} </td>
+                            {% elif avg_rating_item_7 == 3 or avg_rating_item_7 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_7 }} </td>
+                            {% elif avg_rating_item_7 == 4 or avg_rating_item_7 < 5  %}
+                                <td> Agree - {{ avg_rating_item_7 }} </td>
+                            {% elif avg_rating_item_7 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_7 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD7. I was treated courteously by the staff, and (if asked for help) the staff was helpful.</td>
+                            {% if avg_rating_item_8 == 0 %}
+                                <td> NA - {{avg_rating_item_8}} </td>
+                            {% elif avg_rating_item_8 == 1 or avg_rating_item_8 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_8 }} </td>
+                            {% elif avg_rating_item_8 == 2 or avg_rating_item_8 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_8 }} </td>
+                            {% elif avg_rating_item_8 == 3 or avg_rating_item_8 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_8 }} </td>
+                            {% elif avg_rating_item_8 == 4 or avg_rating_item_8 < 5  %}
+                                <td> Agree - {{ avg_rating_item_8 }} </td>
+                            {% elif avg_rating_item_8 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_8 }} </td>
+
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>SQD8. I got what I needed from the government office, or (if denied) denial of request was sufficiently explained to me.</td>
+                            {% if avg_rating_item_9 == 0 %}
+                                <td> NA - {{avg_rating_item_9}} </td>
+                            {% elif avg_rating_item_9 == 1 or avg_rating_item_9 < 2  %}
+                                <td>Strongly Disagree - {{ avg_rating_item_9 }} </td>
+                            {% elif avg_rating_item_9 == 2 or avg_rating_item_9 < 3  %}
+                                <td>Disagree - {{ avg_rating_item_9 }} </td>
+                            {% elif avg_rating_item_9 == 3 or avg_rating_item_9 < 4  %}
+                                <td>Neither Agree or Disagree - {{ avg_rating_item_9 }} </td>
+                            {% elif avg_rating_item_9 == 4 or avg_rating_item_9 < 5  %}
+                                <td> Agree - {{ avg_rating_item_9 }} </td>
+                            {% elif avg_rating_item_9 == 5 %}
+                                <td> Strongly Agree - {{ avg_rating_item_9 }} </td>
+
+                            {% endif %}
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    

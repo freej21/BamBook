@@ -1,0 +1,102 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> BamBook </title>
+
+    <link rel="icon" href="{% static 'book/bambook/img/lgu_bambang.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'book/bambook/bootstrap.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type = "text/css " href="{% static 'book/bambook/css/camera.css' %}">
+    <link rel="stylesheet" type = "text/css " href="{% static 'book/bambook/css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'book/bambook/css/feedback.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'book/bambook/css/styles.css' %}">
+
+    
+
+    
+
+
+    <style>
+      .checked{
+        color: orange;
+      }
+    </style>
+  </head>
+  
+  <body >
+    
+    <nav class="navbar navbar-expand-lg" id="navigation-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: whitesmoke;">BamBook</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto" id="navbar-nav">
+            <li class="nav-item" id="nav-item">
+              <a class="nav-link" href="{% url 'add-visitor' %}">Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'visitor-receipt' %}">Receipt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'enter-unique-id' %}">Feedback</a>
+            </li>
+            
+          </ul>
+          <div>
+            {% if visitor %}
+              <a class="nav-link" href="#"> Welcome, {{ visitor }}</a>
+            {% endif %}
+              
+          </div>
+          <div>
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </div>
+
+      </div>
+    </nav>
+
+    
+    
+    <div class="container justify-content-center "> <!-- Center content within a container -->
+      {% block content %}
+      {% endblock content %}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script src="{% static 'book/bambook/js/camera.js' %}" ></script>
+    <script src="{% static 'book/bambook/js/feedback.js' %}" ></script>
+    <script src="{% static 'book/bambook/js/login.js' %}"></script>
+    <script src="{% static 'book/bambook/js/messages.js' %}"></script>
+    <script src="{% static 'book/sweetify/sweetify.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+ 
+    
+    {% load sweetify %}
+    {% sweetify %}
+
+  
+  
+  </script>
+
+   
+  </body>
+
+</html>

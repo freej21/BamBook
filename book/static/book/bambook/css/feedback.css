@@ -1,0 +1,32 @@
+/* Style the star rating container */
+.rating {
+  display: inline-block;
+  font-size: 0; /* Remove whitespace between inline-block elements */
+
+}
+
+/* Style the star icons */
+.rating input[type="radio"] {
+  display: none; /* Hide the radio buttons */
+
+}
+
+/* Define the star icons */
+.rating label {
+  font-size: 24px; /* Set the size of the stars */
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* Define the star icons' colors */
+.rating label::before {
+  content: "\2605"; /* Unicode character for a star icon */
+  color: black; /* Default star color */
+}
+
+/* Define the star icons' colors when selected */
+.rating input[type="radio"]:checked ~ label::before {
+  color: #f0d53d; /* Selected star color */
+  
+}
+
