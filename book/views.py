@@ -1,18 +1,12 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import *
 from .forms import *
 from django.http import JsonResponse
 import base64
 from django.core.files.base import ContentFile
-from io import BytesIO
-from xhtml2pdf import pisa
-from django.template.loader import get_template
 import sweetify
 from django.contrib.auth.decorators import login_required
-import uuid
 import random
-from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 

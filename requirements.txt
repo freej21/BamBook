@@ -25,8 +25,6 @@ psycopg2-binary==2.9.9
 pycparser==2.21
 pyHanko==0.20.1
 pyhanko-certvalidator==0.24.1
-pypdf==3.16.4
-PyPDF2==3.0.1
 pypng==0.20220715.0
 python-bidi==0.4.2
 PyYAML==6.0.1
@@ -44,6 +42,4 @@ tzdata==2023.3
 tzlocal==5.1
 uritools==4.0.2
 urllib3==2.0.6
-uuid==1.30
 webencodings==0.5.1
-xhtml2pdf==0.2.11
