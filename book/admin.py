@@ -7,7 +7,7 @@ from django.utils.html import format_html
 
 
 class VisitorAdmin(admin.ModelAdmin):
-    list_display = ('display_captured_photo','name', 'contact','formatted_date_added','get_time_in', 'get_time_out','calculate_stay_duration', 'address', 'purpose', 'department')
+    list_display = ('display_captured_photo','display_unique_id','name', 'contact','formatted_date_added','get_time_in', 'get_time_out','calculate_stay_duration', 'address', 'purpose', 'department')
     search_fields = ('name', 'department')
 
     def formatted_date_added(self, obj):
@@ -36,6 +36,11 @@ class VisitorAdmin(admin.ModelAdmin):
         duration = obj.calculate_stay_duration()
         return str(duration).split('.')[0] if duration else None
     calculate_stay_duration.short_description = 'Stay Duration'
+
+    def display_unique_id(self, obj):
+       return obj.unique_id
+
+    display_unique_id.short_description = 'ID'
 
 
 class FeedbackAdmin(admin.ModelAdmin):
