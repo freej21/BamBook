@@ -31,6 +31,16 @@
       .checked{
         color: orange;
       }
+      @media screen and (max-width: 767px){
+        .hidden-mobile{
+          display: none;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        .hide-desktop{
+          display: none;
+        }
+      }
     </style>
   </head>
   
@@ -38,11 +48,14 @@
     
     <nav class="navbar navbar-expand-lg" id="navigation-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="color: whitesmoke;">BamBook</a>
+        <div>
+          <a class="navbar-brand" href="#" style="color: whitesmoke;"> <span> <img class="img-profile"
+            src="{% static 'book/bambook/img/lgu_bambang.png' %}" style="width: 40px;"></span> BamBook</a>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse"   id="navbarColor03">
           <ul class="navbar-nav me-auto" id="navbar-nav">
             <li class="nav-item" id="nav-item">
               <a class="nav-link" href="{% url 'add-visitor' %}">Home
@@ -50,23 +63,22 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'visitor-receipt' %}">Receipt</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'enter-unique-id' %}">Feedback</a>
+            </li>
+            <li class="hide-desktop">
+              <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
             </li>
             
           </ul>
-          <div>
+          <div class="hidden-mobile">
             {% if visitor %}
               <a class="nav-link" href="#"> Welcome, {{ visitor }}</a>
             {% endif %}
               
           </div>
-          <div>
+          <div class="hidden-mobile">
             <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
           </div>
-
       </div>
     </nav>
 
