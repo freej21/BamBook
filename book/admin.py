@@ -9,6 +9,8 @@ from django.utils.html import format_html
 class VisitorAdmin(admin.ModelAdmin):
     list_display = ('display_captured_photo','display_unique_id','name', 'contact','formatted_date_added','get_time_in', 'get_time_out','calculate_stay_duration', 'address', 'purpose', 'department')
     search_fields = ('name', 'department')
+    list_filter = ('department',)
+   
 
     def formatted_date_added(self, obj):
         return obj.date.strftime('%Y-%m-%d')
@@ -52,6 +54,7 @@ class VisitorAdmin(admin.ModelAdmin):
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('visitor', 'display_item_1', 'display_item_2', 'display_item_3', 'display_item_4',
                     'display_item_5', 'display_item_6', 'display_item_7', 'display_item_8', 'display_item_9', 'comment')
+    
 
     def get_item_display(self, item_value):
         for value, label in Feedback.RATING_CHOICES:
@@ -123,7 +126,14 @@ class AverageFeedbackAdmin(admin.ModelAdmin):
         
         return item_descriptions.get(obj.item_number, f'Item {obj.item_number}')
     
-      
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_change_permission(self, request, obj=None):
+        return False
+    
+    def has_add_permission(self, request, obj=None):
+        return False
     
     get_item_description.short_description = 'Item Description'
 
