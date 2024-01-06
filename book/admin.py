@@ -32,6 +32,12 @@ class VisitorAdmin(admin.ModelAdmin):
             return None
     get_time_out.short_description = 'Time Out'
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_change_permission(self, request, obj=None):
+        return False
+
     def calculate_stay_duration(self, obj):
         duration = obj.calculate_stay_duration()
         return str(duration).split('.')[0] if duration else None
@@ -88,6 +94,12 @@ class FeedbackAdmin(admin.ModelAdmin):
     def display_item_9(self, obj):
         return self.get_item_display(obj.item_9)
     display_item_9.short_description = 'SQD8'
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_change_permission(self, request, obj=None):
+        return False
     
 class AverageFeedbackAdmin(admin.ModelAdmin):
     list_display = ('get_item_description', 'average_rating', 'rating_description')
