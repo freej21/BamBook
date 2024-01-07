@@ -55,7 +55,7 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('visitor', 'display_item_1', 'display_item_2', 'display_item_3', 'display_item_4',
                     'display_item_5', 'display_item_6', 'display_item_7', 'display_item_8', 'display_item_9', 'comment')
     
-
+    list_filter = ('date_added',)
     def get_item_display(self, item_value):
         for value, label in Feedback.RATING_CHOICES:
             if value == item_value:
